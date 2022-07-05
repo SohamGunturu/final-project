@@ -3,18 +3,27 @@
     {
       "path": "about.html",
       "title": "About this site",
-      "description": "Some additional details about the website",
+      "description": "This site explores urban and rural areas in the US, and compares it with poverty levels. ",
       "author": [],
-      "contents": "\n\n\n\n",
-      "last_modified": "2022-07-04T09:08:35-04:00"
+      "contents": "\nAbout me\nMy name is Soham Gunturu and I am a rising junior in\nNew Albany, Ohio. I love basketball and taekwondo, and I am involved\nwith many different clubs at my school such as science olympiad, JSA,\nand others! ## What is this site about? This site explores urban and\nrural areas in the US, and compares it with poverty levels.\n\n\n\n",
+      "last_modified": "2022-07-04T09:31:42-04:00"
     },
     {
       "path": "index.html",
       "title": "Pattern between urban/rural areas and poverty",
-      "description": "Welcome to the website. I hope you enjoy it!\n",
+      "description": "This website will explore many different relationships between mortality rate of babies/toddlers and various variables\n",
       "author": [],
-      "contents": "\n\n\n\n",
-      "last_modified": "2022-07-04T09:08:35-04:00"
+      "contents": "\nThis graph will examine how the mortality rate of children under five\nchanges as time progresses. The following graph shows an inverse\nrelationship. This makes sense because as we become more modern, so does\nour technology and medical services. With better medical services, we\nare able to save more children from death.\n\n\n\nThis graph will examine how the mortality rate of children under five\nchanges in different countries. The United States is a 1st world\ncountry, China is a 2nd world country, and India is a third world\ncountry. The following graph provides evidence that higher world\ncountries have less death and vice versa. This makes sense because\ntechnologically advanced countries can provide better medical assistance\nin saving these children.\n\n\n\n“This graph will examine how the mortality rate of children under five\nchanges in different socioeconomic classes. As income increases, death\ncount decreases. This makes sense because higher income families can\nafford better care for their children.”\n\n\n\n\n\n\n",
+      "last_modified": "2022-07-05T10:04:50-04:00"
+    },
+    {
+      "path": "sources.html",
+      "title": "Sources",
+      "description": "A new article created using the Distill format.\n",
+      "author": [],
+      "date": "`r Sys.Date()`",
+      "contents": "\nThis will describe what sources were used in this analysis\n\n\n\n",
+      "last_modified": "2022-07-04T09:32:02-04:00"
     }
   ],
   "collections": []

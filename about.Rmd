@@ -1,10 +1,11 @@
 ---
 title: "About this site"
 description: |
-  Some additional details about the website
+  This site explores urban and rural areas in the US, and compares it with poverty levels. 
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
-
+## About me
+My name is **Soham Gunturu** and I am a rising junior in New Albany, Ohio. I love basketball and taekwondo, and I am involved with many different clubs at my school such as science olympiad, JSA, and others! 

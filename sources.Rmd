@@ -1,0 +1,18 @@
+---
+title: "Sources"
+description: |
+  A new article created using the Distill format.
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+This will describe what sources were used in this analysis
+
+
+
+
+
+

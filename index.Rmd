@@ -1,18 +1,111 @@
 ---
 title: "Pattern between urban/rural areas and poverty"
 description: |
-  Welcome to the website. I hope you enjoy it!
+  This website will explore many different relationships between mortality rate of babies/toddlers and various variables
 site: distill::distill_website
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-
-# Learn more about creating websites with Distill at:
-# https://rstudio.github.io/distill/website.html
-
-# Learn more about publishing to GitHub Pages at:
-# https://rstudio.github.io/distill/publish_website.html#github-pages
-
+library(tidyverse)
+library(tidycensus)
+library(tigris)
+library(ggthemes)
+library(distill)
+library(usethis)
+```
+This graph will examine how the mortality rate of children under five changes as time progresses. The following graph shows an inverse relationship. This makes sense because as we become more modern, so does our technology and medical services. With better medical services, we are able to save more children from death.
+```{r US mortality rate over time}
+mort_rate <- read_csv(file = "Data_Extract_From_World_Development_Indicators.zip")
+mort_rate |> 
+  rename(country = "Country Name") |> 
+  filter(country == "United States") |> 
+  rename("1990" = "1990 [YR1990]") |> 
+  rename("2000" = "2000 [YR2000]") |>
+  rename("2012" = "2012 [YR2012]") |>
+  rename("2013" = "2013 [YR2013]") |>
+  rename("2014" = "2014 [YR2014]") |>
+  rename("2015" = "2015 [YR2015]") |>
+  rename("2016 "= "2016 [YR2016]") |>
+  rename("2017" = "2017 [YR2017]") |>
+  rename("2018" = "2018 [YR2018]") |>
+  rename("2019" = "2019 [YR2019]") |>
+  rename("2020" = "2020 [YR2020]") |> 
+  pivot_longer(names_to = "year",
+               values_to = "death",
+               cols = "1990":"2020") |> 
+  mutate(years = as.integer(year)) |>  
+  mutate(deaths = as.integer(death)) |> 
+  ggplot(mapping = aes(x = years, y = deaths)) + 
+  geom_point(alpha = 0.5) + 
+  geom_smooth(se = FALSE) + 
+  theme_clean() + 
+  labs(title = "Mortality rate of babies under five per\n thousand live births over the years", 
+       subtitle = "As we become more modern, deaths decrease", 
+       x = "Year", y = "Deaths (per thousand births)", 
+       caption = "databank.worldbank.org")
+```
+This graph will examine how the mortality rate of children under five changes in different countries. The United States is a 1st world country, China is a 2nd world country, and India is a third world country. The following graph provides evidence that higher world countries have less death and vice versa. This makes sense because technologically advanced countries can provide better medical assistance in saving these children. 
+```{r comparision between 1st, 2nd, and 3rd world countries}
+mort_rate |> 
+  rename(country = "Country Name") |> 
+  filter(country %in% c("United States", "China", "India")) |>  
+  rename("1990" = "1990 [YR1990]") |> 
+  rename("2000" = "2000 [YR2000]") |>
+  rename("2012" = "2012 [YR2012]") |>
+  rename("2013" = "2013 [YR2013]") |>
+  rename("2014" = "2014 [YR2014]") |>
+  rename("2015" = "2015 [YR2015]") |>
+  rename("2016 "= "2016 [YR2016]") |>
+  rename("2017" = "2017 [YR2017]") |>
+  rename("2018" = "2018 [YR2018]") |>
+  rename("2019" = "2019 [YR2019]") |>
+  rename("2020" = "2020 [YR2020]") |> 
+  pivot_longer(names_to = "year",
+               values_to = "death",
+               cols = "1990":"2020") |> 
+  mutate(years = as.integer(year)) |>  
+  mutate(deaths = as.integer(death)) |> 
+  ggplot(mapping = aes(x = country, y = deaths, fill = "blue")) + 
+  geom_col() + 
+  theme_clean() + 
+  theme(legend.position = "none") +
+    labs(title = "Mortality rate of babies under five per\n thousand live births in different countries", 
+       subtitle = "3rd world country has high death count and vice versa", 
+       x = "Country", y = "Deaths (per thousand births)", 
+       caption = "databank.worldbank.org")
+   
+```
+"This graph will examine how the mortality rate of children under five changes in different socioeconomic classes. As income increases, death count decreases. This makes sense because higher income families can afford better care for their children. "
+```{r}
+mort_rate |> 
+  rename(country = "Country Name") |> 
+  filter(country %in% c("Low income", "Middle income", 
+                        "Upper middle income")) |>
+   rename("1990" = "1990 [YR1990]") |> 
+  rename("2000" = "2000 [YR2000]") |>
+  rename("2012" = "2012 [YR2012]") |>
+  rename("2013" = "2013 [YR2013]") |>
+  rename("2014" = "2014 [YR2014]") |>
+  rename("2015" = "2015 [YR2015]") |>
+  rename("2016 "= "2016 [YR2016]") |>
+  rename("2017" = "2017 [YR2017]") |>
+  rename("2018" = "2018 [YR2018]") |>
+  rename("2019" = "2019 [YR2019]") |>
+  rename("2020" = "2020 [YR2020]") |> 
+  pivot_longer(names_to = "year",
+               values_to = "death",
+               cols = "1990":"2020") |> 
+  mutate(years = as.integer(year)) |>  
+  mutate(deaths = as.integer(death)) |> 
+  ggplot(mapping = aes(x = country, y = deaths, fill = "#FF0000")) + 
+  geom_col() +
+  theme_clean() + 
+  theme(legend.position = "none") + 
+    labs(title = "Mortality rate of babies under five per\n thousand live birth in socioeconomic classes", 
+       subtitle = "Higher income correlates to lower death count", 
+       x = "Socioeconomic Class", y = "Deaths (per thousand births)", 
+       caption = "databank.worldbank.org") 
+  
 ```
 
