@@ -3,18 +3,18 @@
     {
       "path": "about.html",
       "title": "About this site",
-      "description": "This site explores urban and rural areas in the US, and compares it with poverty levels. ",
+      "description": "This website will explore many different relationships between mortality rate of babies/toddlers and various variables ",
       "author": [],
-      "contents": "\nAbout me\nMy name is Soham Gunturu and I am a rising junior in\nNew Albany, Ohio. I love basketball and taekwondo, and I am involved\nwith many different clubs at my school such as science olympiad, JSA,\nand others! ## What is this site about? This site explores urban and\nrural areas in the US, and compares it with poverty levels.\n\n\n\n",
-      "last_modified": "2022-07-04T09:31:42-04:00"
+      "contents": "\nAbout me\nMy name is Soham Gunturu and I am a rising junior in\nNew Albany, Ohio. I love basketball and taekwondo, and I am involved\nwith many different clubs at my school such as science olympiad, JSA,\nand others! Please feel free to contact me at 614-477-4024 or\ngunturu.soham@gmail.com. ### Github Repository https://github.com/SohamGunturu/final-project ### David\nKane Website Link https://bootcamp.davidkane.info/\n\n\n\n",
+      "last_modified": "2022-07-06T13:05:21-04:00"
     },
     {
       "path": "index.html",
-      "title": "Pattern between urban/rural areas and poverty",
+      "title": "What factors affect mortalities in children",
       "description": "This website will explore many different relationships between mortality rate of babies/toddlers and various variables\n",
       "author": [],
-      "contents": "\nThis graph will examine how the mortality rate of children under five\nchanges as time progresses. The following graph shows an inverse\nrelationship. This makes sense because as we become more modern, so does\nour technology and medical services. With better medical services, we\nare able to save more children from death.\n\n\n\nThis graph will examine how the mortality rate of children under five\nchanges in different countries. The United States is a 1st world\ncountry, China is a 2nd world country, and India is a third world\ncountry. The following graph provides evidence that higher world\ncountries have less death and vice versa. This makes sense because\ntechnologically advanced countries can provide better medical assistance\nin saving these children.\n\n\n\n“This graph will examine how the mortality rate of children under five\nchanges in different socioeconomic classes. As income increases, death\ncount decreases. This makes sense because higher income families can\nafford better care for their children.”\n\n\n\n\n\n\n",
-      "last_modified": "2022-07-05T10:04:50-04:00"
+      "contents": "\nIntrodcution\nMany kids throughout the world never make it past the hospital due to\nvarious complications, illnesses, and other factors. How can we prevent\nthis? What type of area is this common in? Is this problem being\naddressed? These are the questions we hope to answer in this analysis.\nThis graph will examine how the mortality rate of children under five\nchanges as time progresses.\n\n\n\nThe graph shows an inverse relationship. This makes sense because as\nwe become more modern, so does our technology and medical services. With\nbetter medical services, we are able to save more children from death.\nThis graph will examine how the mortality rate of children under five\nchanges in different countries. The US has a GDP of $19.485 trillion,\nChina has a GDP of $12.238 trillion, Brazil has a GDP of $2.054\ntrillion, Mexico has a GDP of $1.151 trillion, Peru has a GDP of $211\nbillion.\n\n\n\nThe following graph provides evidence that on average, countries with\nhigher GDPs have lower death counts and vice versa. This graph will\nexamine how the mortality rate of children under five changes in\ndifferent socioeconomic classes.\n\n\n\nAs income increases, death count decreases. This makes sense because\nhigher income families can afford better care for their children.\nConclusion\nFrom these graphs we can notice three trends: 1. The death count\ndecreases as time goes on 2. More developed countries have a lower death\ncount 3. Higher income families have, on average, a lower death\ncount\nThe trends in 2 and 3 are troubling. The people in need in these\nareas are not receiving any. This is a problem that affects the future\nheavily, and it needs to be brought to attention. These groups need to\nhave the resources in order to be able to afford medical services for\ntheir children.\n\n\n\n",
+      "last_modified": "2022-07-06T15:02:38-04:00"
     },
     {
       "path": "sources.html",
@@ -22,8 +22,8 @@
       "description": "A new article created using the Distill format.\n",
       "author": [],
       "date": "`r Sys.Date()`",
-      "contents": "\nThis will describe what sources were used in this analysis\n\n\n\n",
-      "last_modified": "2022-07-04T09:32:02-04:00"
+      "contents": "\nThis will describe what sources were used in this analysis\nURL: https://databank.worldbank.org/reports.aspx?source=2&series=SH.DYN.MORT&country=#\nWhat dataset was used\nand how was it used\ndatabank.worldbank.org I used the databank.worldbank\nwebsite to access my data set. My data set examines the number of deaths\nfor children under 5 per 1000 lives births in different countries,\nincome statuses, and regions. I used the data to study 3 different\ntrends: 1. Death count vs. Year 2. Death count vs. Country 3. Death\ncount vs. Socioeconomic Class\n\n\n\n",
+      "last_modified": "2022-07-06T13:05:27-04:00"
     }
   ],
   "collections": []

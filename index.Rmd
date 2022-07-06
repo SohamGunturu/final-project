@@ -1,5 +1,5 @@
 ---
-title: "Pattern between urban/rural areas and poverty"
+title: "What factors affect mortalities in children"
 description: |
   This website will explore many different relationships between mortality rate of babies/toddlers and various variables
 site: distill::distill_website
@@ -14,7 +14,13 @@ library(ggthemes)
 library(distill)
 library(usethis)
 ```
-This graph will examine how the mortality rate of children under five changes as time progresses. The following graph shows an inverse relationship. This makes sense because as we become more modern, so does our technology and medical services. With better medical services, we are able to save more children from death.
+
+
+## Introdcution
+Many kids throughout the world never make it past the hospital due to various complications, illnesses, and other factors. How can we prevent this? What type of area is this common in? Is this problem being addressed? These are the questions we hope to answer in this analysis. 
+This graph will examine how the mortality rate of children under five changes as time progresses. 
+
+
 ```{r US mortality rate over time}
 mort_rate <- read_csv(file = "Data_Extract_From_World_Development_Indicators.zip")
 mort_rate |> 
@@ -43,13 +49,18 @@ mort_rate |>
   labs(title = "Mortality rate of babies under five per\n thousand live births over the years", 
        subtitle = "As we become more modern, deaths decrease", 
        x = "Year", y = "Deaths (per thousand births)", 
-       caption = "databank.worldbank.org")
+       caption = "databank.worldbank.org") 
 ```
-This graph will examine how the mortality rate of children under five changes in different countries. The United States is a 1st world country, China is a 2nd world country, and India is a third world country. The following graph provides evidence that higher world countries have less death and vice versa. This makes sense because technologically advanced countries can provide better medical assistance in saving these children. 
+
+
+The  graph shows an inverse relationship. This makes sense because as we become more modern, so does our technology and medical services. With better medical services, we are able to save more children from death. 
+This graph will examine how the mortality rate of children under five changes in different countries. The US has a GDP of \$19.485 trillion, China has a GDP of \$12.238 trillion, Brazil has a GDP of \$2.054 trillion, Mexico has a GDP of $1.151 trillion, Peru has a GDP of \$211 billion.
+
+
 ```{r comparision between 1st, 2nd, and 3rd world countries}
 mort_rate |> 
   rename(country = "Country Name") |> 
-  filter(country %in% c("United States", "China", "India")) |>  
+  filter(country %in% c("United States", "China", "Brazil", "Mexico", "Peru")) |>  
   rename("1990" = "1990 [YR1990]") |> 
   rename("2000" = "2000 [YR2000]") |>
   rename("2012" = "2012 [YR2012]") |>
@@ -76,12 +87,17 @@ mort_rate |>
        caption = "databank.worldbank.org")
    
 ```
-"This graph will examine how the mortality rate of children under five changes in different socioeconomic classes. As income increases, death count decreases. This makes sense because higher income families can afford better care for their children. "
+
+
+The following graph provides evidence that on average, countries with higher GDPs have lower death counts and vice versa. 
+This graph will examine how the mortality rate of children under five changes in different socioeconomic classes.
+
+
 ```{r}
 mort_rate |> 
   rename(country = "Country Name") |> 
   filter(country %in% c("Low income", "Middle income", 
-                        "Upper middle income")) |>
+                        "High income")) |>
    rename("1990" = "1990 [YR1990]") |> 
   rename("2000" = "2000 [YR2000]") |>
   rename("2012" = "2012 [YR2012]") |>
@@ -109,3 +125,14 @@ mort_rate |>
   
 ```
 
+
+As income increases, death count decreases. This makes sense because higher income families can afford better care for their children.
+
+
+## Conclusion 
+From these graphs we can notice three trends: 
+1. The death count decreases as time goes on
+2. More developed countries have a lower death count
+3. Higher income families have, on average, a lower death count
+
+The trends in 2 and 3 are troubling. The people in need in these areas are not receiving any. This is a problem that affects the future heavily, and it needs to be brought to attention. These groups need to have the resources in order to be able to afford medical services for their children. 

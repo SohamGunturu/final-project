@@ -1,7 +1,7 @@
 ---
 title: "About this site"
 description: |
-  This site explores urban and rural areas in the US, and compares it with poverty levels. 
+   This website will explore many different relationships between mortality rate of babies/toddlers and various variables 
 ---
 
 ```{r setup, include=FALSE}
@@ -9,3 +9,8 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 ## About me
 My name is **Soham Gunturu** and I am a rising junior in New Albany, Ohio. I love basketball and taekwondo, and I am involved with many different clubs at my school such as science olympiad, JSA, and others! 
+Please feel free to contact me at 614-477-4024 or gunturu.soham\@gmail.com.
+### Github Repository
+https://github.com/SohamGunturu/final-project
+### David Kane Website Link
+https://bootcamp.davidkane.info/
