@@ -19,11 +19,13 @@ library(usethis)
 ## Introdcution
 Many kids throughout the world never make it past the hospital due to various complications, illnesses, and other factors. How can we prevent this? What type of area is this common in? Is this problem being addressed? These are the questions we hope to answer in this analysis. 
 
-This graph will examine how the mortality rate of children under five changes as time progresses. 
+This graph will examine how the mortality rate of children under five in the US and in the world changes as time progresses. 
 
 
 ```{r US mortality rate over time}
+#Getting csv file
 mort_rate <- read_csv(file = "Data_Extract_From_World_Development_Indicators.zip")
+#Graphing and tidying data. First, I will start by just changing the name and focusing in on the cases in the US. Then I use ggplot to graph it as a line graph and give it some labels.
 mort_rate |> 
   rename(country = "Country Name") |> 
   filter(country == "United States") |> 
@@ -47,19 +49,51 @@ mort_rate |>
   geom_point(alpha = 0.5) + 
   geom_smooth(se = FALSE) + 
   theme_clean() + 
-  labs(title = "Mortality rate of babies under five per\n thousand live births over the years", 
+  labs(title = "Mortality rate of babies under five per\n thousand live births over the years (US)", 
        subtitle = "As we become more modern, deaths decrease", 
        x = "Year", y = "Deaths (per thousand births)", 
-       caption = "databank.worldbank.org") 
+       caption = "databank.worldbank.org")  
+```
+```{r world mortality rate over time}
+#Graphing and tidying data. First, I will start by just changing the name and focusing in on the cases in the world Then I use ggplot to graph it as a line graph and give it some labels.
+mort_rate |> 
+  rename(country = "Country Name") |> 
+  filter(country == "World") |> 
+  rename("1990" = "1990 [YR1990]") |> 
+  rename("2000" = "2000 [YR2000]") |>
+  rename("2012" = "2012 [YR2012]") |>
+  rename("2013" = "2013 [YR2013]") |>
+  rename("2014" = "2014 [YR2014]") |>
+  rename("2015" = "2015 [YR2015]") |>
+  rename("2016 "= "2016 [YR2016]") |>
+  rename("2017" = "2017 [YR2017]") |>
+  rename("2018" = "2018 [YR2018]") |>
+  rename("2019" = "2019 [YR2019]") |>
+  rename("2020" = "2020 [YR2020]") |> 
+  pivot_longer(names_to = "year",
+               values_to = "death",
+               cols = "1990":"2020") |> 
+  mutate(years = as.integer(year)) |>  
+  mutate(deaths = as.integer(death)) |> 
+  ggplot(mapping = aes(x = years, y = deaths)) + 
+  geom_point(alpha = 0.5) + 
+  geom_smooth(se = FALSE) + 
+  theme_clean() + 
+  labs(title = "Mortality rate of babies under five per\n thousand live births over the years (World)", 
+       subtitle = "As we become more modern, deaths decrease", 
+       x = "Year", y = "Deaths (per thousand births)", 
+       caption = "databank.worldbank.org")  
 ```
 
 
-The  graph shows an inverse relationship. This makes sense because as we become more modern, so does our technology and medical services. With better medical services, we are able to save more children from death. 
+
+Both graphs shows an inverse relationship. This makes sense because as we become more modern, so does our technology and medical services. With better medical services, we are able to save more children from death. 
 
 This graph will examine how the mortality rate of children under five changes in different countries. The US has a GDP of \$19.485 trillion, China has a GDP of \$12.238 trillion, Brazil has a GDP of \$2.054 trillion, Mexico has a GDP of $1.151 trillion, Peru has a GDP of \$211 billion.
 
 
-```{r comparision between 1st, 2nd, and 3rd world countries}
+```{r comparision between different countries}
+#First, I only filter a few countries. Then I rename the columns so its easier to access and tidy the data. Then I graph it as a bar chart and each bar corresponds to a country. Finally, I label it
 mort_rate |> 
   rename(country = "Country Name") |> 
   filter(country %in% c("United States", "China", "Brazil", "Mexico", "Peru")) |>  
@@ -84,7 +118,7 @@ mort_rate |>
   theme_clean() + 
   theme(legend.position = "none") +
     labs(title = "Mortality rate of babies under five per\n thousand live births in different countries", 
-       subtitle = "3rd world country has high death count and vice versa", 
+       subtitle = "Low GDP has high death count and vice versa", 
        x = "Country", y = "Deaths (per thousand births)", 
        caption = "databank.worldbank.org")
    
@@ -96,7 +130,8 @@ The following graph provides evidence that on average, countries with higher GDP
 This graph will examine how the mortality rate of children under five changes in different socioeconomic classes.
 
 
-```{r}
+```{r Socioeconomic class}
+#I filter the data so it includes low, middle, and upper class. I then rename the columns and tidy up the data. I then create a bar chart with each bar corresponding to a class. FInally, I label it. 
 mort_rate |> 
   rename(country = "Country Name") |> 
   filter(country %in% c("Low income", "Middle income", 
