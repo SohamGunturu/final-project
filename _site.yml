@@ -1,7 +1,7 @@
 name: "."
-title: "Pattern between urban/rural areas and poverty"
+title: "What factors affect mortalities in children"
 description: |
-  Pattern between urban/rural areas and poverty
+  How has this trend changed over time? Where is it more common?
 output_dir: "docs"
 navbar:
   right:
