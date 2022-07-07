@@ -18,6 +18,7 @@ library(usethis)
 
 ## Introdcution
 Many kids throughout the world never make it past the hospital due to various complications, illnesses, and other factors. How can we prevent this? What type of area is this common in? Is this problem being addressed? These are the questions we hope to answer in this analysis. 
+
 This graph will examine how the mortality rate of children under five changes as time progresses. 
 
 
@@ -54,6 +55,7 @@ mort_rate |>
 
 
 The  graph shows an inverse relationship. This makes sense because as we become more modern, so does our technology and medical services. With better medical services, we are able to save more children from death. 
+
 This graph will examine how the mortality rate of children under five changes in different countries. The US has a GDP of \$19.485 trillion, China has a GDP of \$12.238 trillion, Brazil has a GDP of \$2.054 trillion, Mexico has a GDP of $1.151 trillion, Peru has a GDP of \$211 billion.
 
 
@@ -90,6 +92,7 @@ mort_rate |>
 
 
 The following graph provides evidence that on average, countries with higher GDPs have lower death counts and vice versa. 
+
 This graph will examine how the mortality rate of children under five changes in different socioeconomic classes.
 
 
@@ -135,4 +138,4 @@ From these graphs we can notice three trends:
 2. More developed countries have a lower death count
 3. Higher income families have, on average, a lower death count
 
-The trends in 2 and 3 are troubling. The people in need in these areas are not receiving any. This is a problem that affects the future heavily, and it needs to be brought to attention. These groups need to have the resources in order to be able to afford medical services for their children. 
+The trends in 2 and 3 are troubling. The people in need in these areas are not receiving as much medial services as needed. This is a problem that affects the future heavily, and it needs to be brought to attention. These groups need to have the resources in order to be able to afford medical services for their children. 

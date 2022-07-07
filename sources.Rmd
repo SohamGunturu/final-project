@@ -1,7 +1,7 @@
 ---
 title: "Sources"
 description: |
-  A new article created using the Distill format.
+ This will describe what sources were used in this analysis
 date: "`r Sys.Date()`"
 output: distill::distill_article
 ---
@@ -9,13 +9,16 @@ output: distill::distill_article
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
-This will describe what sources were used in this analysis
+
 
 URL: https://databank.worldbank.org/reports.aspx?source=2&series=SH.DYN.MORT&country=#
 
 ## What dataset was used and how was it used
 **databank.worldbank.org**
+
 I used the databank.worldbank website to access my data set. My data set examines the number of deaths for children under 5 per 1000 lives births in different countries, income statuses, and regions. I used the data to study 3 different trends:
+
+
 1. Death count vs. Year
 2. Death count vs. Country
 3. Death count vs. Socioeconomic Class
