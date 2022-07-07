@@ -133,7 +133,9 @@ As income increases, death count decreases. This makes sense because higher inco
 
 
 ## Conclusion 
+
 From these graphs we can notice three trends: 
+
 1. The death count decreases as time goes on
 2. More developed countries have a lower death count
 3. Higher income families have, on average, a lower death count
